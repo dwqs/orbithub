@@ -13,7 +13,11 @@
     "default_title":"Github Simple Search",
     "default_popup":"index.html"
   },
+  "background":{
+      "scripts": ["js/newTab.js"]
+  },
   "permissions":[
-    "https://api.github.com/search/repositories?q=*"
+    "https://api.github.com/search/repositories?q=*",
+    "tabs"
   ]
 }

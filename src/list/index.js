@@ -26,12 +26,14 @@ export default class List extends Component{
 
     jumpToUrl(url){
         return () => {
-
+            //send a message for creating a new tab
+            chrome.runtime.sendMessage(url, (res) => {});
         }
     }
 
     goToNext(){
         let nextPage = NEXT_PAGE_PREFIX + this.props.val;
+        chrome.runtime.sendMessage(nextPage, (res) => {});
     }
 
     renderList(){
