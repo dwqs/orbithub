@@ -40,7 +40,7 @@ export default class Orbithub extends Component{
                 tipsInfo: "Search repositories on Github",
                 items:[],
                 showLoading: false,
-                showList: true,
+                showList: false,
             })
         }
     }
@@ -49,7 +49,9 @@ export default class Orbithub extends Component{
         if(e.keyCode === 13){
             let url = API_PREFIX + this.state.val;
             this.setState({
-                showLoading: true
+                showLoading: true,
+                showList: false,
+                showTips: false,
             });
             fetch(url).then((res) => {
                 return res.json();
@@ -73,6 +75,7 @@ export default class Orbithub extends Component{
                 this.setState({
                     showLoading: false,
                     showTips: true,
+                    showList: false,
                     tipsInfo: "Something was error when searching, try again."
                 });
             });
@@ -102,7 +105,9 @@ export default class Orbithub extends Component{
 
         if(!this.state.items.length){
             this.setState({
-                showTips: true
+                showTips: true,
+                showList: false,
+                showLoading: false
             })
         }
     }
