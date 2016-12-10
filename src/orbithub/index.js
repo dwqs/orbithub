@@ -11,6 +11,7 @@ import ReactDom from 'react-dom';
 const API_PREFIX = 'https://api.github.com/search/repositories?q=';
 
 import Loading from '../loading/index';
+import Tips from '../tips/index';
 
 export default class Orbithub extends Component{
 
@@ -21,7 +22,7 @@ export default class Orbithub extends Component{
             items:[],
             showLoading: false,
             showList: false,
-            showTips: false,
+            showTips: true,
             tipsInfo: "Search repositories on Github"
         }
     }
@@ -42,6 +43,7 @@ export default class Orbithub extends Component{
                 </header>
                 <main>
                     <Loading shown={this.state.showLoading} />
+                    <Tips shown={this.state.showTips} tipsInfo={this.state.tipsInfo} />
                 </main>
             </div>
         );
@@ -83,6 +85,12 @@ export default class Orbithub extends Component{
     componentDidMount(){
         let rootDom = ReactDom.findDOMNode(this.root);
         rootDom.addEventListener('keydown',this.enterToSearch.bind(this),false);
+
+        if(!this.state.items.length){
+            this.setState({
+                showTips: true
+            })
+        }
     }
 
     componentWillUnmount(){
