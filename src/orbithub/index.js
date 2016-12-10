@@ -66,7 +66,7 @@ export default class Orbithub extends Component{
                         showLoading: false,
                         showList: false,
                         showTips: true,
-                        tipsInfo: "Couldn’t find any repositories matching '" + this.state.val + "'"
+                        tipsInfo: 'Couldn’t find any repositories matching "' + this.state.val + '"'
                     });
                 }
             }).catch((err) => {
