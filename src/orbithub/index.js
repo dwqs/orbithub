@@ -34,23 +34,6 @@ export default class Orbithub extends Component{
         })
     }
 
-    render () {
-        //return Children.only(this.props.children);
-        return (
-            <div className="container" ref={(root) => this.root = root}>
-                <header>
-                    <img src='../images/github48.png' alt="logo"/>
-                    <input type="text" autoFocus="autoFocus" placeholder="Search On Github" onInput={this.valChange.bind(this)} />
-                </header>
-                <main>
-                    <Loading shown={this.state.showLoading} />
-                    <Tips shown={this.state.showTips} tipsInfo={this.state.tipsInfo} />
-                    <List shown={this.state.showList} items={this.state.items} />
-                </main>
-            </div>
-        );
-    }
-
     enterToSearch(e){
         if(e.keyCode === 13){
             let url = API_PREFIX + this.state.val;
@@ -83,6 +66,23 @@ export default class Orbithub extends Component{
                 });
             });
         }
+    }
+
+    render () {
+        //return Children.only(this.props.children);
+        return (
+            <div className="container" ref={(root) => this.root = root}>
+                <header>
+                    <img src='../images/github48.png' alt="logo"/>
+                    <input type="text" autoFocus="autoFocus" placeholder="Search On Github" onInput={this.valChange.bind(this)} />
+                </header>
+                <main>
+                    <Loading shown={this.state.showLoading} />
+                    <Tips shown={this.state.showTips} tipsInfo={this.state.tipsInfo} />
+                    <List shown={this.state.showList} items={this.state.items} val={this.state.val} />
+                </main>
+            </div>
+        );
     }
 
     componentDidMount(){

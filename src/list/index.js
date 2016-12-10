@@ -7,6 +7,8 @@ import './index.less';
 
 import React, {Component,PropTypes,Children} from 'react';
 
+const NEXT_PAGE_PREFIX = 'https://github.com/search?p=2&q=';
+
 export default class List extends Component{
     constructor(){
         super();
@@ -14,7 +16,8 @@ export default class List extends Component{
 
     static propTypes = {
         items: PropTypes.array,
-        shown: PropTypes.bool.isRequired
+        shown: PropTypes.bool.isRequired,
+        val: PropTypes.string
     };
 
     static defaultProps = {
@@ -55,35 +58,16 @@ export default class List extends Component{
     }
 
     render() {
-        let {shown,items} = this.props;
-        console.log('6666666',items.length);
+        let {shown,val} = this.props;
+
+        let nextPage = NEXT_PAGE_PREFIX + val;
         return (
             <ul className="list" style={{display: shown ? 'block':'none'}}>
                 {this.renderList()}
+                <p className="next">
+                    没有找到？去<a href={nextPage}>下一页</a>
+                </p>
             </ul>
         )
     }
 }
-
-{/*<li className="item">*/}
-    {/*<div className="title">*/}
-        {/*<h3>*/}
-            {/*<a href="https://github.com/facebook/react">facebook/react</a>*/}
-        {/*</h3>*/}
-    {/*</div>*/}
-    {/*<p className="desc">sdasdsdasdassdasdsdasdassdasdasassdasdassdasdasas</p>*/}
-    {/*<div className="meta">*/}
-                        {/*<span className="language">*/}
-                            {/*<img src="../../images/language.png" alt="language"/>*/}
-                            {/*<span className="text">JavaScript</span>*/}
-                        {/*</span>*/}
-        {/*<span className="star">*/}
-                            {/*<img src="../../images/star.png" alt="language"/>*/}
-                            {/*<span className="text">27363</span>*/}
-                        {/*</span>*/}
-        {/*<span className="fork">*/}
-                            {/*<img src="../../images/fork.png" alt="language"/>*/}
-                            {/*<span className="text">67657</span>*/}
-                        {/*</span>*/}
-    {/*</div>*/}
-{/*</li>*/}
