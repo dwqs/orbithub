@@ -29,9 +29,20 @@ export default class Orbithub extends Component{
     }
 
     valChange(e){
-        this.setState({
-            val: e.target.value
-        })
+        if(e.target.value){
+            this.setState({
+                val: e.target.value
+            })
+        } else {
+            this.setState({
+                val: '',
+                showTips: true,
+                tipsInfo: "Search repositories on Github",
+                items:[],
+                showLoading: false,
+                showList: true,
+            })
+        }
     }
 
     enterToSearch(e){
@@ -55,7 +66,7 @@ export default class Orbithub extends Component{
                         showLoading: false,
                         showList: false,
                         showTips: true,
-                        tipsInfo: "Couldn’t find any repositories matching " + this.state.val
+                        tipsInfo: "Couldn’t find any repositories matching '" + this.state.val + "'"
                     });
                 }
             }).catch((err) => {

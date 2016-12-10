@@ -41,8 +41,8 @@ export default class List extends Component{
             return (
                 <li className="item" key={index}>
                     <div className="title">
-                        <h3>
-                            <span onClick={this.jumpToUrl(item.html_url)}>{item.full_name}</span>
+                        <h3 onClick={this.jumpToUrl(item.html_url)}>
+                            {item.full_name}
                         </h3>
                     </div>
                     <p className="desc">{item.description}</p>
