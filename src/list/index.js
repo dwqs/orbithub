@@ -24,6 +24,16 @@ export default class List extends Component{
         items: []
     };
 
+    jumpToUrl(url){
+        return () => {
+
+        }
+    }
+
+    goToNext(){
+        let nextPage = NEXT_PAGE_PREFIX + this.props.val;
+    }
+
     renderList(){
         let {items} = this.props;
 
@@ -32,7 +42,7 @@ export default class List extends Component{
                 <li className="item" key={index}>
                     <div className="title">
                         <h3>
-                            <span href={item.html_url}>{item.full_name}</span>
+                            <span onClick={this.jumpToUrl(item.html_url)}>{item.full_name}</span>
                         </h3>
                     </div>
                     <p className="desc">{item.description}</p>
@@ -58,14 +68,13 @@ export default class List extends Component{
     }
 
     render() {
-        let {shown,val} = this.props;
+        let {shown} = this.props;
 
-        let nextPage = NEXT_PAGE_PREFIX + val;
         return (
             <ul className="list" style={{display: shown ? 'block':'none'}}>
                 {this.renderList()}
                 <p className="next">
-                    没有找到？去<span href={nextPage}>下一页</span>
+                    没有找到？去<span onClick={this.goToNext.bind(this)}>下一页</span>
                 </p>
             </ul>
         )
