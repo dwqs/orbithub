@@ -5,13 +5,14 @@
 'use strict';
 import './index.less';
 
-import React, {Component, PropTypes,Children} from 'react';
+import React, {Component} from 'react';
 import ReactDom from 'react-dom';
 
 const API_PREFIX = 'https://api.github.com/search/repositories?q=';
 
 import Loading from '../loading/index';
 import Tips from '../tips/index';
+import List from '../list/index';
 
 export default class Orbithub extends Component{
 
@@ -21,8 +22,8 @@ export default class Orbithub extends Component{
             val: '',
             items:[],
             showLoading: false,
-            showList: false,
-            showTips: true,
+            showList: true,
+            showTips: false,
             tipsInfo: "Search repositories on Github"
         }
     }
@@ -44,6 +45,7 @@ export default class Orbithub extends Component{
                 <main>
                     <Loading shown={this.state.showLoading} />
                     <Tips shown={this.state.showTips} tipsInfo={this.state.tipsInfo} />
+                    <List shown={this.state.showList} items={this.state.items} />
                 </main>
             </div>
         );
@@ -58,16 +60,17 @@ export default class Orbithub extends Component{
             fetch(url).then((res) => {
                 return res.json();
             }).then((data) => {
-                console.log('77777',data);
                 if(data.total_count){
                     this.setState({
                         showLoading: false,
                         showList: true,
-                        items: data.items
+                        showTips: false,
+                        items: data.items.slice(0,10)
                     });
                 } else {
                     this.setState({
                         showLoading: false,
+                        showList: false,
                         showTips: true,
                         tipsInfo: "Couldn’t find any repositories matching " + this.state.val
                     });
