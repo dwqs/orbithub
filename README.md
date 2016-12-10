@@ -8,6 +8,16 @@ A chrome extensition for convenient github search.
 * [download from BaiduYun](https://pan.baidu.com/s/1pL8Qi3x)
 * [download from google drive](https://drive.google.com/open?id=0B3aIq_rAoUdwNGNCS1pEQnU0cGc)
 
+## Tools
+[crx](https://github.com/oncletom/crx) is node.js command line app for packing Google Chrome extensions.
+
+```
+npm i crx -g
+crx crx pack -o outputPath
+```
+
+>`outputPath` is like `./xxx/orbithub.crx`
+
 ## License
 MIT
 
