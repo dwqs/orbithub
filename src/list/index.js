@@ -37,7 +37,7 @@ export default class List extends Component{
                     </div>
                     <p className="desc">{item.description}</p>
                     <div className="meta">
-                        <span className="language">
+                        <span className="language" style={{display:item.language ? 'inline-block':'none'}}>
                             <img src="../../images/language.png" alt="language"/>
                             <span className="text">{item.language}</span>
                         </span>
