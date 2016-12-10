@@ -1,0 +1,48 @@
+.container{
+    position: relative;
+    box-sizing: border-box;
+    *{
+        box-sizing: border-box;
+    }
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    header{
+        position: fixed;
+        width: 298px;
+        height: 50px;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #e5e5e5;
+        img{
+            width: 35px;
+            height: 35px;
+            margin: 7px 10px;
+            vertical-align: middle;
+        }
+        input{
+            width: 225px;
+            padding: 6px 8px;
+            line-height: 20px;
+            border-radius: 3px;
+            font-size: 16px;
+            color: #333;
+            vertical-align: middle;
+            outline: none;
+            border: 1px solid #ddd;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+            &:focus{
+                border-color: #51a7e8;
+                box-shadow: inset 0 1px 2px rgba(0,0,0,0.075),0 0 5px rgba(81,167,232,0.5);
+            }
+        }
+    }
+    main{
+        position: absolute;
+        top: 50px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}

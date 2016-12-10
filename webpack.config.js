@@ -34,6 +34,16 @@ module.exports =  {
             test: /\.less$/,
             //loader: 'style!css!less'
             loader:ExtractTextPlugin.extract('style','css!less?sourceMap')
+        },{
+            test: /\.(png|jpg|gif|jpeg)$/,
+            loader: 'url',
+            query: {
+                limit: 10000,
+                //name: '[name].[ext]?[hash]'
+            }
+        }, {
+            test: /\.(png|jpg|gif|jpeg)$/,
+            loader: 'file'
         }]
     },
 

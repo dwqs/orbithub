@@ -7,7 +7,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import Orbithub from './orbithub';
+import Orbithub from './orbithub/index';
 
 window.onload = function () {
     ReactDOM.render(
