@@ -32,7 +32,7 @@ export default class List extends Component{
                 <li className="item" key={index}>
                     <div className="title">
                         <h3>
-                            <a href={item.html_url}>{item.full_name}</a>
+                            <span href={item.html_url}>{item.full_name}</span>
                         </h3>
                     </div>
                     <p className="desc">{item.description}</p>
@@ -65,7 +65,7 @@ export default class List extends Component{
             <ul className="list" style={{display: shown ? 'block':'none'}}>
                 {this.renderList()}
                 <p className="next">
-                    没有找到？去<a href={nextPage}>下一页</a>
+                    没有找到？去<span href={nextPage}>下一页</span>
                 </p>
             </ul>
         )
