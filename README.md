@@ -16,7 +16,7 @@ npm i crx -g
 crx crx pack -o outputPath
 ```
 
->`outputPath` is like `./xxx/orbithub.crx`
+>`outputPath` is like `/xxx/orbithub.crx`, it must include the suffix .crx
 
 ## License
 MIT
