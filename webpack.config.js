@@ -23,7 +23,7 @@ module.exports =  {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             //react-hot for HMR
-            loaders: ['react-hot','babel?presets[]=react,presets[]=es2015,presets[]=stage-1']
+            loaders: ['react-hot','babel']
             //loader:'babel'
         },{
             test: /\.css$/,

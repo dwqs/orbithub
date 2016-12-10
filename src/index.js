@@ -7,11 +7,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import Hello from './hello';
+import Orbithub from './orbithub';
 
 window.onload = function () {
     ReactDOM.render(
-        <Hello />,
+        <Orbithub />,
         document.getElementById('orbithub')
     );
 };

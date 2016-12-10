@@ -2,7 +2,7 @@
   "name": "orbithub",
   "version": "1.0.0",
   "description": "A chrome extensition for convenient github searching",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js --progress",
     "dev": "NODE_ENV=development node server.js"
@@ -13,6 +13,21 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwqs/orbithub.git"
+  },
+  "keywords": [
+    "github",
+    "chrome_extension",
+    "search",
+    "github search",
+    "git search"
+  ],
+  "bugs": {
+    "url": "https://github.com/dwqs/orbithub/issues"
+  },
+  "homepage": "https://github.com/dwqs/orbithub#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.6.0",
