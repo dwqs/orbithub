@@ -9,7 +9,7 @@ A chrome extensition for convenient github search.
 * [download from google drive](https://drive.google.com/open?id=0B3aIq_rAoUdwNGNCS1pEQnU0cGc)
 
 ## Tools
-[crx](https://github.com/oncletom/crx) is node.js command line app for packing Google Chrome extensions.
+[crx](https://github.com/oncletom/crx) is a node.js command line app for packing Google Chrome extensions.
 
 ```
 npm i crx -g
