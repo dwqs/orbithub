@@ -5,8 +5,8 @@ A chrome extensition for convenient github search.
 ![github-search](http://i1.piimg.com/567571/d6a5af7220705152.gif)
 
 ## Download
-* [download from BaiduYun](https://pan.baidu.com/s/1pL8Qi3x)
-* [download from google drive](https://drive.google.com/open?id=0B3aIq_rAoUdwNGNCS1pEQnU0cGc)
+* [download from Chrome Webstore](https://chrome.google.com/webstore/detail/orbithub/bbmpajfkliaoffnjmllekijamdbdcaig)
+* [download from BaiduYun](https://pan.baidu.com/s/1miS99NU)
 
 ## Tools
 [crx](https://github.com/oncletom/crx) is a node.js command line app for packing Google Chrome extensions.
